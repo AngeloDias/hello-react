@@ -8,7 +8,12 @@ export default class classComponent extends Component {
     }
 
     likeFunction = (event) => {
-        console.log('Uol, você gostou da publicação!')
+        console.log(event.target)
+        
+        this.setState({
+            title: 'Approved post',
+            desc: 'Approved desc'
+        })
     }
 
     render() {
