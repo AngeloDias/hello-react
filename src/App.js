@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PostComponent from './PostComponent';
+import AddPostComponent from './AddPostComponent'
 
 export default class App extends Component {
   state = {
@@ -17,6 +18,7 @@ export default class App extends Component {
       <div>
         <h1 className="center">Photos</h1><hr/>
         <PostComponent posts={this.state.posts}/>
+        <AddPostComponent />
       </div>
     )
   }
