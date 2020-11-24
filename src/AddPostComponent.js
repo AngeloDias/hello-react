@@ -15,23 +15,33 @@ export default class AddPostComponent extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        console.log(this.state)
+        this.props.addPost(this.state);
     }
 
     render() {
         return(
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                    <label htmlFor="name">Post Title</label>
-                    <input type="text" id="title" onChange={this.handleChange} />
+            <div className="row">
+                <form onSubmit={this.handleSubmit} className="col s12">
+                    <div>
 
-                    <label htmlFor="name">Post Description</label>
-                    <input type="text" id="desc" onChange={this.handleChange} />
+                        <div className="input-field col s6">
+                            <label htmlFor="name">Post Title</label>
+                            <input type="text" id="title" className="validate" onChange={this.handleChange} />
+                        </div>
 
-                    <label htmlFor="name">Image Link</label>
-                    <input type="text" id="link" onChange={this.handleChange} />
+                        <div className="input-field col s6">
+                            <label htmlFor="name">Post Description</label>
+                            <input type="text" id="desc" onChange={this.handleChange} />
+                        </div>
 
-                    <button>Submit</button>
+                        <div className="input-field col s6">
+                            <label htmlFor="name">Image Link</label>
+                            <input type="text" id="link" onChange={this.handleChange} />
+                        </div>
+
+                        <button className="btn waves-effect waves-light">Submit</button>
+
+                    </div>
                 </form>
             </div>
         )
