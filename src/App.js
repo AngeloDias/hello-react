@@ -1,12 +1,20 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ClassComponent from './classComponent';
 
-function App() {
-  return (
-    <div className="App">
-      <ClassComponent title="Post name again" desc="Description"/>
-    </div>
-  );
-}
+export default class App extends Component {
+  state = {
+    posts: [
+      {title: 'POST TITLE ONE', desc: 'POST DESC ONE'},
+      {title: 'POST TITLE TWO', desc: 'POST DESC TWO'},
+      {title: 'POST TITLE THREE', desc: 'POST DESC THREE'}
+    ]
+  }
 
-export default App;
+  render() {
+    return (
+      <div>
+        <ClassComponent posts={this.state.posts}/>
+      </div>
+    )
+  }
+}

@@ -3,12 +3,19 @@ import React, { Component } from 'react'
 export default class classComponent extends Component {
 
     render() {
-        const {title, desc} = this.props
+        const {posts} = this.props
+        const postLists = posts.map(post => {
+            return (
+                <div>
+                    <h1>{post.title}</h1>
+                    <p>{post.desc}</p>
+                </div>
+            )
+        })
 
         return(
             <div>
-                <h1>{title}</h1>
-                <p>{desc}</p>
+                {postLists}
             </div>
         )
     }
